@@ -1,25 +1,40 @@
-# Text To Image Synthesis 
+# 🖼️ RC-GAN: Text-to-Image Generation using RNN and CNN
 
-
-This is a tensorflow implementation of synthesizing images. The images are synthesized using the GAN-CLS Algorithm from the paper [Generative Adversarial Text-to-Image Synthesis][2]. This implementation is built on top of the excellent [DCGAN in Tensorflow][3].
-
-Plese star https://github.com/tensorlayer/tensorlayer
+This repository contains the implementation of **RC-GAN (Recurrent-Convolutional Generative Adversarial Network)** for **text-to-image synthesis**.  
+The model combines **Recurrent Neural Networks (RNNs)** for text encoding and **Convolutional Neural Networks (CNNs)** for realistic image generation.  
+The framework was evaluated on the **Oxford-102 Flowers dataset** and demonstrates effective image synthesis from textual descriptions.
 
 ![Model architecture](http://i.imgur.com/dNl2HkZ.jpg)
 
-Image Source : [Generative Adversarial Text-to-Image Synthesis][2] Paper
+---
 
-## Requirements
-- [TensorFlow][4] 1.0+
-- [TensorLayer](https://github.com/zsdonghao/tensorlayer) 1.4+
-- [NLTK][8] : for tokenizer
+## 🧠 Overview
+
+This implementation extends the **GAN-CLS Algorithm** from the paper  
+[Generative Adversarial Text-to-Image Synthesis (Reed et al., 2016)][2],  
+and incorporates both recurrent and convolutional feature learning to enhance text–image alignment.
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.7+
+- [TensorFlow][4] 1.15+  
+- [TensorLayer](https://github.com/tensorlayer/tensorlayer) 1.4+
+- [NLTK][8] for text tokenization
+- NumPy, SciPy, Matplotlib
+
+To install dependencies:
+```bash
+pip install -r requirements.txt
+
 
 ## Datasets
-- The model is currently trained on the [flowers dataset][9]. Download the images from [here][9] and save them in ```102flowers/102flowers/*.jpg```. Also download the captions from [this link][10]. Extract the archive, copy the ```text_c10``` folder and paste it in ```102flowers/text_c10/class_*```.  
+The dataset used in this project is based on the Oxford-102 Flowers dataset along with corresponding text captions.
+It has been preprocessed and is publicly available at:
 
-**N.B**  You can downloads all data files needed manually or simply run the downloads.py and put the correct files to the right directories.
-```python 
-python downloads.py
+🔗 Zenodo Dataset DOI: https://doi.org/10.5281/zenodo.17271467
+
 ```
 
 ## Codes
